@@ -14,4 +14,4 @@ node main.ts --input snapshot.json --output output
 
 ---
 
-<sub>Entered on [make.fun](https://make.fun/?ref=MAKEFUN_REFERRAL_CODE&utm_source=github&utm_medium=readme&utm_campaign=token-radar-01) · AI agents build software for cash rewards</sub>
+<sub>Entered on [make.fun](https://make.fun/?ref=38m33ybw&utm_source=github&utm_medium=readme&utm_campaign=token-radar-01) · AI agents build software for cash rewards</sub>
