@@ -1,0 +1,126 @@
+/* Aica Token Radar — a dark, single-accent theme. No webfonts, no images, no network:
+   every rule below is the whole of the styling, in system type. */
+:root {
+  --ink: #0a0e13;
+  --panel: #10161f;
+  --panel-2: #141c28;
+  --line: #223042;
+  --line-soft: #182233;
+  --text: #dbe6f2;
+  --dim: #8ba0b8;
+  --faint: #5d7289;
+  --accent: #2dd4bf;
+  --accent-dim: #134e47;
+  --amber: #f5b544;
+  --up: #4ade80;
+  --down: #f87171;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.skip { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #04211c; padding: 8px 14px; z-index: 60; }
+.skip:focus { left: 8px; top: 8px; }
+main { display: block; max-width: 1360px; margin: 0 auto; padding: 22px 22px 40px; }
+
+/* Header */
+.masthead { border-bottom: 2px solid var(--accent-dim); padding-bottom: 14px; margin-bottom: 14px; }
+.masthead .kicker { color: var(--accent); font-family: var(--mono); font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; margin: 0 0 6px; }
+.masthead h1 { font-size: 27px; margin: 0 0 6px; font-weight: 700; letter-spacing: -0.3px; }
+.masthead h1 .thin { color: var(--dim); font-weight: 400; }
+.masthead .lede { color: var(--dim); margin: 0; max-width: 880px; }
+.masthead .lede b { color: var(--text); font-weight: 600; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 4px; }
+.stat { background: var(--panel); border: 1px solid var(--line-soft); border-radius: 8px; padding: 8px 14px 7px; min-width: 118px; }
+.stat .n { font-family: var(--mono); font-size: 19px; color: var(--text); display: block; }
+.stat .l { color: var(--faint); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.stat.hot .n { color: var(--accent); }
+
+/* Method strip */
+.method { background: var(--panel); border: 1px solid var(--line-soft); border-left: 3px solid var(--accent); border-radius: 6px; padding: 10px 14px; margin: 12px 0 16px; color: var(--dim); font-size: 13px; }
+.method b { color: var(--text); }
+.method .formula { font-family: var(--mono); color: var(--accent); font-size: 12.5px; }
+
+/* Controls */
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 6px; }
+.controls .tabs { display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.controls .tabs button { background: var(--panel); color: var(--dim); border: 0; padding: 8px 16px; font: inherit; font-size: 13px; cursor: pointer; }
+.controls .tabs button[aria-pressed="true"] { background: var(--accent-dim); color: #a7f3ea; }
+.controls input[type="search"], .controls select {
+  background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 8px;
+  padding: 8px 10px; font: inherit; font-size: 13px;
+}
+.controls input[type="search"] { min-width: 210px; }
+.controls label.check { color: var(--dim); font-size: 13px; display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+.controls label.check input { accent-color: var(--accent); }
+.controls .count { color: var(--faint); font-size: 12.5px; margin-left: auto; font-family: var(--mono); }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+thead th {
+  text-align: right; color: var(--faint); font-size: 11px; text-transform: uppercase; letter-spacing: 1px;
+  padding: 8px 10px; border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--ink); z-index: 2;
+}
+thead th:first-child, thead th:nth-child(2) { text-align: left; }
+thead th button { background: none; border: 0; color: inherit; font: inherit; text-transform: inherit; letter-spacing: inherit; cursor: pointer; padding: 0; }
+thead th button:hover { color: var(--accent); }
+thead th .arrow { color: var(--accent); }
+tbody td { padding: 8px 10px; border-bottom: 1px solid var(--line-soft); text-align: right; font-family: var(--mono); font-size: 13px; vertical-align: middle; }
+tbody td:first-child, tbody td:nth-child(2) { text-align: left; font-family: var(--sans); }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--panel); }
+tbody tr.selected { background: var(--panel-2); box-shadow: inset 3px 0 0 var(--accent); }
+td.rank { color: var(--faint); font-family: var(--mono); width: 44px; }
+td .pname { font-weight: 600; color: var(--text); font-size: 13.5px; }
+td .pcat { color: var(--faint); font-size: 11.5px; display: block; font-family: var(--sans); }
+td .chains { color: var(--dim); font-size: 11.5px; font-family: var(--sans); display: block; max-width: 210px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+td.implied { color: var(--accent); font-weight: 600; }
+td .mult { color: var(--faint); font-size: 11px; display: block; }
+.up { color: var(--up); } .down { color: var(--down); } .flat { color: var(--dim); }
+.badge { display: inline-block; font-size: 10px; font-family: var(--mono); letter-spacing: 0.6px; padding: 1.5px 6px; border-radius: 20px; vertical-align: 2px; margin-left: 7px; }
+.badge.wl { background: #3a2b07; color: var(--amber); border: 1px solid #6b4e0e; }
+.badge.early { background: var(--accent-dim); color: #7de8db; border: 1px solid #1d6a60; }
+.empty { color: var(--dim); padding: 26px 10px; text-align: center; border: 1px dashed var(--line); border-radius: 8px; margin-top: 12px; }
+
+/* Detail drawer */
+.drawer {
+  position: fixed; top: 0; right: 0; width: min(520px, 94vw); height: 100vh; overflow-y: auto;
+  background: var(--panel); border-left: 1px solid var(--line); padding: 20px 22px 30px; z-index: 40;
+  box-shadow: -18px 0 44px rgba(0, 0, 0, 0.5);
+}
+.drawer[hidden] { display: none; }
+.drawer .close { position: absolute; top: 14px; right: 16px; background: var(--panel-2); color: var(--dim); border: 1px solid var(--line); border-radius: 6px; width: 30px; height: 30px; cursor: pointer; font-size: 15px; }
+.drawer .close:hover { color: var(--text); }
+.drawer .kicker { color: var(--accent); font-family: var(--mono); font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 4px; }
+.drawer h2 { margin: 0 26px 2px 0; font-size: 21px; }
+.drawer .sub { color: var(--dim); margin: 0 0 14px; font-size: 13px; }
+.drawer h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1.4px; color: var(--faint); margin: 20px 0 8px; border-bottom: 1px solid var(--line-soft); padding-bottom: 5px; }
+.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; }
+.facts div { background: var(--panel-2); border: 1px solid var(--line-soft); border-radius: 7px; padding: 7px 10px; }
+.facts .k { color: var(--faint); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.8px; display: block; }
+.facts .v { font-family: var(--mono); font-size: 14.5px; }
+.modelbox { background: #0c1219; border: 1px solid var(--line-soft); border-radius: 8px; padding: 12px 14px; font-family: var(--mono); font-size: 12.5px; }
+.modelbox .line { display: flex; justify-content: space-between; gap: 12px; padding: 2.5px 0; color: var(--dim); }
+.modelbox .line b { color: var(--text); font-weight: 500; text-align: right; }
+.modelbox .total { border-top: 1px solid var(--line); margin-top: 7px; padding-top: 8px; color: var(--text); }
+.modelbox .total b { color: var(--accent); font-size: 15px; }
+.modelbox .note { color: var(--faint); font-family: var(--sans); font-size: 12px; margin: 8px 0 0; }
+ol.plan { margin: 0; padding: 0 0 0 20px; }
+ol.plan li { margin: 0 0 11px; color: var(--text); font-size: 13.5px; }
+ol.plan li::marker { color: var(--accent); font-family: var(--mono); }
+
+/* Footer */
+.foot { color: var(--faint); font-size: 12px; margin-top: 26px; border-top: 1px solid var(--line-soft); padding-top: 12px; }
+.foot b { color: var(--dim); }
+@media (max-width: 760px) {
+  .facts { grid-template-columns: 1fr 1fr; }
+  td .chains { display: none; }
+  .masthead h1 { font-size: 22px; }
+}
